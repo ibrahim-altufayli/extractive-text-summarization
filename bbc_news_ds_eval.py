@@ -17,7 +17,7 @@ NEWS_CATEGORIES = ['Business', 'Entertainment', 'Politics', 'Sport', 'Tech']
 NEWS_CATEGORIES_PATHS = ['/business', '/entertainment', '/politics', '/sport', '/tech']
 
 
-def dataset_eval(lsa_topics_num=2, num_clusters=2, summarization_perc=0.35):
+def dataset_eval(lsa_topics_num=2, num_clusters=4, summarization_perc=0.35):
     stop_words = nltk.corpus.stopwords.words('english')
     results_df = pd.DataFrame(index=NEWS_CATEGORIES, columns=["lsa_rouge1", "lsa_rouge2", "lsa_rouge3", "lsa_rougeL", "lsa_sentiment_mse",
                                                               "clustering_rouge1", "clustering_rouge2", "clustering_rouge3", "clustering_rougeL", "clustering_sentiment_mse",

@@ -4,7 +4,7 @@ from scipy.spatial import distance
 from utils import clean_text, normalize_text, tf_idf_vectorization
 
 
-def clustering_document_term_summarizer(text: str, stop_words, num_clusters=2, summarization_perc=0.35):
+def clustering_document_term_summarizer(text: str, stop_words, num_clusters=4, summarization_perc=0.35):
     sentences = nltk.sent_tokenize(clean_text(text))
     num_sentences = int(len(sentences) * summarization_perc)
     normalized_text = normalize_text(text, stop_words)
