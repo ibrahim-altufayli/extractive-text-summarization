@@ -13,7 +13,7 @@ stop_words = nltk.corpus.stopwords.words('english')
 
 print("***********************DATASET EVALUATION************************")
 
-#dataset_eval(lsa_topics_num=2, num_clusters=4, summarization_perc=0.35)
+dataset_eval(lsa_topics_num=2, num_clusters=4, summarization_perc=0.35)
 
 print("*****************Visualize DATASET EVALUATION******************")
 results_csv = pd.read_csv('./results/bbc_news_db_eval.csv', index_col=0)
