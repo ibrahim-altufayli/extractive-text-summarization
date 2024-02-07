@@ -61,7 +61,7 @@ def dataset_eval(lsa_topics_num=2, num_clusters=4, summarization_perc=0.35):
 
             summary_sentiment = estimate_sentiments(lsa_summary)
             summary_sentiment_vec = [summary_sentiment.polarity, summary_sentiment.subjectivity]
-            lsa_sentiments.append(np.square(np.subtract(text_sentiment_vec, summary_sentiment_vec)))
+            lsa_sentiments.append(distance.euclidean(text_sentiment_vec, summary_sentiment_vec))
 
             score = evaluate_summarization(lsa_summary, target_summary)
             lsa_rouge_1.append(score['rouge1'].fmeasure)
@@ -73,7 +73,7 @@ def dataset_eval(lsa_topics_num=2, num_clusters=4, summarization_perc=0.35):
                                                                      summarization_perc=summarization_perc)
             summary_sentiment = estimate_sentiments(clustering_summary)
             summary_sentiment_vec = [summary_sentiment.polarity, summary_sentiment.subjectivity]
-            clust_sentiments.append(np.square(np.subtract(text_sentiment_vec, summary_sentiment_vec)))
+            clust_sentiments.append(distance.euclidean(text_sentiment_vec, summary_sentiment_vec))
 
             score = evaluate_summarization(clustering_summary, target_summary)
             clust_rouge_1.append(score['rouge1'].fmeasure)
@@ -84,7 +84,7 @@ def dataset_eval(lsa_topics_num=2, num_clusters=4, summarization_perc=0.35):
             statistical_summary = statistical_summarizer(text, stop_words, summarization_perc=summarization_perc)
             summary_sentiment = estimate_sentiments(statistical_summary)
             summary_sentiment_vec = [summary_sentiment.polarity, summary_sentiment.subjectivity]
-            stas_sentiments.append(np.square(np.subtract(text_sentiment_vec, summary_sentiment_vec)))
+            stas_sentiments.append(distance.euclidean(text_sentiment_vec, summary_sentiment_vec))
 
             score = evaluate_summarization(statistical_summary, target_summary)
             stas_rouge_1.append(score['rouge1'].fmeasure)

@@ -81,7 +81,7 @@ def plot_category_summary_results(category_name, category_results):
     metrics_means = {
         'ROUGE1': (category_results['lsa_rouge1'], category_results['clustering_rouge1'], category_results['statistical_rouge1']),
         'ROUGE2': (category_results['lsa_rouge2'], category_results['clustering_rouge2'], category_results['statistical_rouge2']),
-        'ROUGE3': (category_results['lsa_rouge2'], category_results['clustering_rouge3'], category_results['statistical_rouge3']),
+        'ROUGE3': (category_results['lsa_rouge3'], category_results['clustering_rouge3'], category_results['statistical_rouge3']),
         'ROUGEL': (category_results['lsa_rougeL'], category_results['clustering_rougeL'], category_results['statistical_rougeL']),
         'SENTIMENT_MSE': (category_results['lsa_sentiment_mse'], category_results['clustering_sentiment_mse'],
                           category_results['statistical_sentiment_mse'])
